@@ -22,14 +22,14 @@
     },
     "a8c34e30dd42bfa0d900135a30dbc42f877332f6d3aa29d69727e5d34d15e657": {
       "address": "0xFB88dE099e13c3ED21F80a7a1E49f8CAEcF10df6",
-      "txHash": "0xe459df898c013ae4fa7fc96e616315771907bdaab307abdd40efdae981874b2f",
+      "txHash": "0xb4732c923f7f833aaf51bf78f831cd87c36a41038e56619a0c92f2c317b8df37",
       "layout": {
         "storage": [
           {
             "contract": "BoxV2",
             "label": "value",
             "type": "t_uint256",
-            "src": "BoxV2.sol:6"
+            "src": "BoxV2.sol:7"
           }
         ],
         "types": {
