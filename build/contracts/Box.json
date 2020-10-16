@@ -801,8 +801,8 @@
       "address": "0xe05C3dEabB23B371c12731E57a10e95BBD18DDDe"
     }
   },
-  "schemaVersion": "3.2.5",
-  "updatedAt": "2020-10-16T14:14:17.646Z",
+  "schemaVersion": "3.3.0",
+  "updatedAt": "2020-10-16T15:02:06.614Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

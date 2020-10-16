@@ -13,6 +13,11 @@
           contract.storeString("From localhost via AdminUpgradeabilityProxy");
         }
 
+        $scope.storeAuthor = function() {
+          console.log("storeAuthor")
+          contract.storeAuthor("Author (locahost) via AdminUpgradeabilityProxy");
+        }
+
       });
 
     </script>
@@ -20,12 +25,14 @@
   <body ng-app="app" ng-controller="ctrl">
 
     <button ng-click="storeString()">storeString()</button>
+    <button ng-click="storeAuthor()">storeAuthor()</button>
   </body>
 
 <script>
-    ABI = [{"anonymous":false,"inputs":[{"indexed":false,"internalType":"uint256","name":"newValue","type":"uint256"}],"name":"ValueChanged","type":"event"},{"inputs":[],"name":"content","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"increment","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"retrieve","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"newValue","type":"uint256"}],"name":"store","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"string","name":"newContent","type":"string"}],"name":"storeString","outputs":[],"stateMutability":"nonpayable","type":"function"}]
-    // address = "0xe05C3dEabB23B371c12731E57a10e95BBD18DDDe"; // AdminUpgradeabilityProxy
-    address = "0x518B3ace74176d88137550f1a8D000D5e2EB2aA7"; // BoxV2
+    ABI = [{"anonymous":false,"inputs":[{"indexed":false,"internalType":"uint256","name":"newValue","type":"uint256"}],"name":"ValueChanged","type":"event"},{"inputs":[],"name":"author","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"content","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"increment","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"retrieve","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"newValue","type":"uint256"}],"name":"store","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"string","name":"newAuthor","type":"string"}],"name":"storeAuthor","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"string","name":"newContent","type":"string"}],"name":"storeString","outputs":[],"stateMutability":"nonpayable","type":"function"}]
+ 
+    address = "0xe05C3dEabB23B371c12731E57a10e95BBD18DDDe"; // AdminUpgradeabilityProxy
+    // address = "0x518B3ace74176d88137550f1a8D000D5e2EB2aA7"; // BoxV2
 
     async function init() {
       await window.ethereum.enable();
@@ -37,6 +44,14 @@
 
       let content = await contract.content();
       console.log("Stored content is: " + content);
+
+      // Replace the address to obtain different results
+      // Stored content is: a content written on Etherscan on BoxV2 from EOA
+      // Stored content is: From localhost via AdminUpgradeabilityProxy
+
+      let author = await contract.author();
+      console.log("Stored author is: " + author);
+
     }
 
     init();

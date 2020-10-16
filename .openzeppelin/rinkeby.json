@@ -47,6 +47,40 @@
           }
         }
       }
+    },
+    "e247f4d207e613d3719ed3b965f9fd20c7ab705f5478d2a53288bbac184dc01e": {
+      "address": "0xea89686f9681539f520737206CA0C2BA03096C58",
+      "txHash": "0xecb9786a3f2e3e5be191de6a4443a0be29bee00ad1379c7b0070ce60f218d824",
+      "layout": {
+        "storage": [
+          {
+            "contract": "BoxV3",
+            "label": "value",
+            "type": "t_uint256",
+            "src": "BoxV3.sol:6"
+          },
+          {
+            "contract": "BoxV3",
+            "label": "content",
+            "type": "t_string_storage",
+            "src": "BoxV3.sol:29"
+          },
+          {
+            "contract": "BoxV3",
+            "label": "author",
+            "type": "t_string_storage",
+            "src": "BoxV3.sol:37"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_string_storage": {
+            "label": "string"
+          }
+        }
+      }
     }
   },
   "admin": {
