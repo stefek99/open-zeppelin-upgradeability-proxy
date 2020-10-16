@@ -24,4 +24,11 @@ contract BoxV2 {
         value = value + 1;
         emit ValueChanged(value);
     }
+
+    // For debugging easier to store strings because 0 1 2 3 4 5 confusing with numbers
+    string public  content;
+
+    function storeString(string memory newContent) public {
+        content = newContent;
+    }
 }
